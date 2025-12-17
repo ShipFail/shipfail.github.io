@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ship.Fail — Organization</title>
+  <meta name="description" content="Ship.Fail GitHub Organization Gateway" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            gray: {
+              50: '#f9fafb', 100: '#f3f4f6', 200: '#e5e7eb', 300: '#d1d5db', 400: '#9ca3af',
+              500: '#6b7280', 600: '#4b5563', 700: '#374151', 800: '#1f2937', 900: '#111827', 950: '#030712',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    :root { --brand: #7c3aed; --brand-2: #22d3ee; }
+    body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
+    .glass { backdrop-filter: blur(12px); background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); }
+    .dark .glass { background: rgba(17, 24, 39, 0.4); border: 1px solid rgba(255, 255, 255, 0.05); }
+    
+    /* Adjusted gradients for full screen splash */
+    .gradient-dark { background: radial-gradient(circle at 50% 0%, rgba(124,58,237,0.15), transparent 40%), radial-gradient(circle at 80% 80%, rgba(34,211,238,0.1), transparent 40%); }
+    .gradient-light { background: radial-gradient(circle at 50% 0%, rgba(124,58,237,0.05), transparent 40%), radial-gradient(circle at 80% 80%, rgba(34,211,238,0.05), transparent 40%); }
+  </style>
+  <script>
+    // System preference detection and theme handling
+    function updateTheme() {
+      if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    }
+    updateTheme();
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', updateTheme);
+  </script>
+</head>
+<body class="bg-white text-gray-900 dark:bg-gray-950 dark:text-gray-100 gradient-light dark:gradient-dark transition-colors duration-500 h-screen w-screen overflow-hidden flex flex-col items-center justify-center relative selection:bg-violet-500/30">
+
+  <!-- Theme Toggle (Absolute Top Right) -->
+  <button id="theme-toggle" type="button" class="absolute top-6 right-6 p-2.5 text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-violet-500/50">
+    <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+    <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 100 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+  </button>
+
+  <!-- Main Content -->
+  <main class="w-full max-w-md px-6 text-center z-10">
+    
+    <!-- Logo Animation -->
+    <div class="mb-8 relative inline-block group">
+      <div class="absolute inset-0 bg-violet-600 blur-2xl opacity-20 group-hover:opacity-40 transition-opacity duration-500 rounded-full"></div>
+      <span class="relative inline-flex h-24 w-24 items-center justify-center rounded-2xl bg-violet-600 text-white text-4xl font-extrabold shadow-2xl transform group-hover:scale-105 transition-transform duration-300">SF</span>
+    </div>
+
+    <h1 class="text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white mb-2">Ship<span class="text-violet-600 dark:text-violet-400">.Fail</span></h1>
+    <p class="text-lg text-gray-600 dark:text-gray-400 mb-10">GitHub for Hackathon Ideas</p>
+
+    <!-- CTAs -->
+    <div class="space-y-4">
+      <a href="https://ship.fail" class="group relative flex items-center justify-center w-full p-4 text-base font-semibold text-white transition-all duration-200 bg-violet-600 rounded-xl hover:bg-violet-500 hover:shadow-lg hover:shadow-violet-500/25 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-violet-600 dark:focus:ring-offset-gray-900">
+        <span class="absolute inset-0 w-full h-full rounded-xl opacity-0 group-hover:opacity-10 bg-white transition-opacity"></span>
+        <span>Visit Official Website</span>
+        <svg class="w-5 h-5 ml-2 -mr-1 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+      </a>
+
+      <a href="https://github.com/ShipFail" class="group flex items-center justify-center w-full p-4 text-base font-medium text-gray-700 dark:text-gray-200 transition-all duration-200 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-700 hover:border-gray-300 dark:hover:border-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-200 dark:focus:ring-gray-700 dark:focus:ring-offset-gray-900">
+        <svg class="w-5 h-5 mr-2 text-gray-500 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+        <span>View Organization on GitHub</span>
+      </a>
+    </div>
+
+    <div class="mt-12 text-xs text-gray-400 dark:text-gray-500">
+      <p>&copy; <span id="year"></span> Ship.Fail</p>
+    </div>
+  </main>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    var themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    var themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+    var themeToggleBtn = document.getElementById('theme-toggle');
+
+    // Initial icon state
+    if (document.documentElement.classList.contains('dark')) {
+        themeToggleLightIcon.classList.remove('hidden');
+    } else {
+        themeToggleDarkIcon.classList.remove('hidden');
+    }
+
+    themeToggleBtn.addEventListener('click', function() {
+        themeToggleDarkIcon.classList.toggle('hidden');
+        themeToggleLightIcon.classList.toggle('hidden');
+
+        if (localStorage.getItem('theme')) {
+            if (localStorage.getItem('theme') === 'light') {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+            }
+        } else {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+    });
+  </script>
+</body>
+</html>
